@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import products.views
-
+from django.urls import path, include
+from django.contrib import admin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', products.views.products_list),
+    path('', products.views.products_list, name='product list page'),
+    path('account/', include('account.urls')),
 
 ]
