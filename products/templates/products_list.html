@@ -2,7 +2,24 @@
 
 
 {% block content %}
-<h1>产品页面</h1>
+<div class="container">
+
+{% for product in products.all %}
+    <div class="row">
+
+            <div class="card" style="width: 18rem;">
+              <img src="{{ product.app_icon.url }}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">{{ product.app_title }} <a href="products/{{ product.id }}" class="btn btn-primary">详情页</a></h3>
+                <p class="card-text">{{ product.summary_text }}    ...</p>
+
+              </div>
+            </div>
+    </div>
+{% endfor %}
+</div>
+
+
 {% endblock %}
 
 

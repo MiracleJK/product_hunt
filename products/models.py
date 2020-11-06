@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-class Products(models.Model):
+class Product(models.Model):
     app_title = models.CharField(default='例：抖音-记录美好生活', max_length=50)
     app_intro = models.TextField(default='APP介绍')
     app_url = models.CharField(default='HTTP://', max_length=100)
@@ -15,3 +15,6 @@ class Products(models.Model):
 
     def __str__(self):
         return self.app_title
+
+    def summary_text(self):
+        return self.app_intro[:20]

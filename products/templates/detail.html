@@ -1,0 +1,22 @@
+{% extends "theme.html" %}
+
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{ product.app_icon.url }}"  alt="Card image cap">
+                <img class="card-img-top" src="{{ product.app_image.url }}"  alt="Card image cap">
+            </div>
+        <dic class="col-md-8">
+            {{ product.app_title }}
+            {{ product.app_intro }}
+            <a href="{{ product.app_url }}" class="btn btn-primary">{{ product.app_url }}</a>
+        </dic>
+    </div>
+</div>
+
+{% endblock %}
+
+
