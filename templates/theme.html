@@ -33,18 +33,19 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-link active" href="{% url 'product list page'%}">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link active" href="{% url 'product list page'%}"> 主页 <span class="sr-only">(current)</span></a>
 
             {% if user.is_authenticated %}
-                <a class="nav-link" href=" Javascript:{document.getElementById('Logout').submit()}" >Logout</a>
-                <a class="nav-link" href=" {% url 'sign up page' %} ">Sign up</a>
+                <a class="nav-link" href=" {% url 'publish page' %} ">发布</a>
+                <a class="nav-link" href=" Javascript:{document.getElementById('Logout').submit()}" >退出</a>
+                <a class="nav-link" href=" {% url 'sign up page' %} ">注册</a>
                 <form id ='Logout' method='POST' action="{% url 'logout page'%}" >
                     {% csrf_token %}
                     <input type="hidden">
                 </form>
             {% else %}
-                <a class="nav-link" href=" {% url 'login page' %}">Login</a>
-                <a class="nav-link" href=" {% url 'sign up page' %} ">Sign up</a>
+                <a class="nav-link" href=" {% url 'login page' %}">登录</a>
+                <a class="nav-link" href=" {% url 'sign up page' %} ">注册</a>
             {% endif %}
 
 
